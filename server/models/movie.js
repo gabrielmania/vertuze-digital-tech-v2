@@ -15,4 +15,4 @@ const movieSchema = new Schema({
 // Checks if db already has Movie collection. If not, it will create new collection.
 const Movie = models.Movie || model("Movie", movieSchema);
 
-module.export = Movie;
+module.exports = Movie;

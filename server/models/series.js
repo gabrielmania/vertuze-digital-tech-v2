@@ -16,4 +16,4 @@ const seriesSchema = new Schema({
 // Checks if db already has Series collection. If not, it will create new collection.
 const Series = models.Series || model("Series", seriesSchema);
 
-module.export = Series;
+module.exports = Series;

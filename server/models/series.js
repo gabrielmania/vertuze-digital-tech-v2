@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema, model, models } = mongoose;
 
+// Create new schema for Series model
 const seriesSchema = new Schema({
   firstAirDate: String,
   genre: Array,
@@ -12,6 +13,7 @@ const seriesSchema = new Schema({
   price: Number,
 });
 
+// Checks if db already has Series collection. If not, it will create new collection.
 const Series = models.Series || model("Series", seriesSchema);
 
 module.export = Series;

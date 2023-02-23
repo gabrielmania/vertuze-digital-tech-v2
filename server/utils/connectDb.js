@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
-// Set-up dotenv package. Specify the path to the .env file in the root of the server.
-require("dotenv").config({ path: "../.env" });
+// Set-up dotenv package
+require("dotenv").config();
 
 /* 
   @notice {connectDb} connects to MongoDB Atlas.

@@ -2,13 +2,10 @@ import { NavLink } from "react-router-dom";
 import logo from "/images/dark-bg.png";
 
 function Navbar() {
-  /* 
-    @notice {navLinks} is a mapping of an array that contains another array that has 
-    the navigation link name and URL it will be directed to when activated.
-
-    @params {isActive} is a built in params in NavLink component from react-router-dom
-    that tracks if the NavLink is currently active or not.
-  */
+  // @notice {navLinks} is a mapping of an array that contains another array that has
+  // the navigation link name and URL it will be directed to when activated.
+  // @params {isActive} is a built in params in NavLink component from react-router-dom
+  // that tracks if the NavLink is currently active or not.
   const navLinks = [
     ["Home", "/"],
     ["Movies", "/movies"],
@@ -30,13 +27,10 @@ function Navbar() {
     </li>
   ));
 
-  /* 
-    @notice {userLinks} is a mapping of an array that contains another array that has 
-    the navigation link name and URL it will be directed to when activated.
-
-    @params {isActive} is a built in params in NavLink component from react-router-dom
-    that tracks if the NavLink is currently active or not.
-  */
+  // @notice {userLinks} is a mapping of an array that contains another array that has
+  // the navigation link name and URL it will be directed to when activated.
+  // @params {isActive} is a built in params in NavLink component from react-router-dom
+  // that tracks if the NavLink is currently active or not.
   const userLinks = [
     ["Login", "/login"],
     ["Register", "/register"],

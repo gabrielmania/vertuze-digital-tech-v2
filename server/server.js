@@ -18,6 +18,8 @@ app.get("/movies", async (req, res) => {
 
 // /series routes will get all the series in the database
 app.get("/series", async (req, res) => {
+  // Set Access-Control-Allow-Origin to "*" to allow request from any domain
+  res.set("Access-Control-Allow-Origin", "*");
   const series = await Series.find();
   res.send(series);
 });

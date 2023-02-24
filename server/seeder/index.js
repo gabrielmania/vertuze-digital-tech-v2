@@ -8,12 +8,9 @@ const seriesGenres = require("./seriesGenres");
 
 require("dotenv").config({ path: "../.env" });
 
-/* 
-  @notice {seedDb} will seed the MongoDB database with initial movie or series data
-
-  @params {type} is either "movie" or "tv". URL will change depending on the argument
-  passed to the function.
-*/
+// @notice {seedDb} will seed the MongoDB database with initial movie or series data
+// @params {type} is either "movie" or "tv". URL will change depending on the argument
+// passed to the function.
 async function seedDb(type) {
   const baseUrl = `https://api.themoviedb.org/3/discover/${type}?api_key=${process.env.MOVIEDB_API}&page=`;
 

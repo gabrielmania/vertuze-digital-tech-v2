@@ -8,23 +8,32 @@ const app = express();
 // Connect to database
 connectDb();
 
-// /movies routes will get all the movies in the database
+// @notice /movies route will get all the movies in the database.
 app.get("/movies", async (req, res) => {
-  // Set Access-Control-Allow-Origin to "*" to allow request from any domain
+  // Set Access-Control-Allow-Origin to "*" to allow request from any domain.
   res.set("Access-Control-Allow-Origin", "*");
   const movies = await Movie.find();
   res.send(movies);
 });
 
-// /series routes will get all the series in the database
+// @notice /movies:movieId route will get the detials for the specified movie.
+app.get("/movies/:movieId", async (req, res) => {
+  const { movieId } = req.params;
+  // Set Access-Control-Allow-Origin to "*" to allow request from any domain.
+  res.set("Access-Control-Allow-Origin", "*");
+  const movie = await Movie.findOne({ _id: movieId });
+  res.send(movie);
+});
+
+// @notice /series route will get all the series in the database.
 app.get("/series", async (req, res) => {
-  // Set Access-Control-Allow-Origin to "*" to allow request from any domain
+  // Set Access-Control-Allow-Origin to "*" to allow request from any domain.
   res.set("Access-Control-Allow-Origin", "*");
   const series = await Series.find();
   res.send(series);
 });
 
-// Listen on port 3000
+// Listen on port 3000.
 app.listen(3000, () => {
   console.log("Listening on port 3000...");
 });

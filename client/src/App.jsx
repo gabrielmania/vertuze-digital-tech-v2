@@ -1,23 +1,23 @@
 import { Route, Routes } from "react-router-dom";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+import MovieDetails from "./pages/MovieDetails";
 import Movies from "./pages/Movies";
 import Series from "./pages/Series";
 
 function App() {
   return (
     <>
-      <Navbar />
       <Routes>
         <Route path="/" element={<h1>Home</h1>} />
-        <Route path="/movies" element={<Movies />} />
+        <Route path="/movies">
+          <Route index element={<Movies />} />
+          <Route path=":movieId" element={<MovieDetails />} />
+        </Route>
         <Route path="/series" element={<Series />} />
         <Route path="/about" element={<h1>About Us</h1>} />
         <Route path="/contact" element={<h1>Contact Us</h1>} />
         <Route path="/login" element={<h1>Login</h1>} />
         <Route path="/register" element={<h1>Register</h1>} />
       </Routes>
-      <Footer />
     </>
   );
 }

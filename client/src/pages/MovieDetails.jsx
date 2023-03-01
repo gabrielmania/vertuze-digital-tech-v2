@@ -21,10 +21,12 @@ function MovieDetails() {
   return (
     <div className="h-screen flex flex-col justify-between">
       <Navbar />
-      <div className="card lg:card-side bg-base-100 shadow-xl my-10 mx-auto w-10/12 sm:w-8/12 md:w-6/12 lg:w-11/12 xl:w-10/12 2xl:w-8/12">
-        <figure className="lg:w-8/12 xl:w-6/12">
-          <img src={movie.imgSrc} alt={`${movie.title} Poster`} />
-        </figure>
+      <div className="card lg:card-side bg-base-100 shadow-xl my-10 mx-auto w-10/12 sm:w-8/12 md:w-6/12 lg:w-11/12 xl:w-10/12 2xl:w-8/12 border">
+        <img
+          src={movie.imgSrc}
+          alt={`${movie.title} Poster`}
+          className="lg:w-4/12 rounded-2xl"
+        />
         <div className="card-body">
           <h2 className="card-title text-5xl">{movie.title}</h2>
           <p className="grow-0">

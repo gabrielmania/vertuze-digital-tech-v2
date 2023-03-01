@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 function Series() {
   // State for storing series
@@ -37,9 +38,9 @@ function Series() {
               <h2 className="card-title">{ser.title}</h2>
               <p className="truncate">{ser.overview}</p>
               <div className="card-actions justify-center">
-                <button className="btn btn-warning bg-primary">
+                <Link to={ser._id} className="btn btn-warning bg-primary">
                   View Details
-                </button>
+                </Link>
               </div>
             </div>
           </div>

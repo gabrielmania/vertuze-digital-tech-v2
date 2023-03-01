@@ -33,6 +33,15 @@ app.get("/series", async (req, res) => {
   res.send(series);
 });
 
+// @notice /series:seriesId route will get the detials for the specified series.
+app.get("/series/:seriesId", async (req, res) => {
+  const { seriesId } = req.params;
+  // Set Access-Control-Allow-Origin to "*" to allow request from any domain.
+  res.set("Access-Control-Allow-Origin", "*");
+  const series = await Series.findOne({ _id: seriesId });
+  res.send(series);
+});
+
 // Listen on port 3000.
 app.listen(3000, () => {
   console.log("Listening on port 3000...");
